@@ -1,0 +1,48 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<dom-module id="reverse-text">
+    <style>
+        :host {
+            display: block;
+        }
+
+        label {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+    <template>
+        Input some text
+        <input value="{{value::input}}" />
+        <br><br>
+        <label>{{reversed}}</label>
+    </template>
+    <script>
+(function() {
+'use strict';
+
+class ReverseText extends HTMLElement {
+ beforeRegister() {
+     this.is = "reverse-text";
+     this.properties = {
+         value : {
+             value : 'text',
+             type: 'string',
+             observer: 'reverseText'
+            },
+        reversed: {
+            type: 'string',
+            computed: 'reverseText(value)'
+        }
+ }
+ this.reverseText = function(value) {
+    return value.split("").reverse().join("");
+ }
+ }
+
+ ready() {
+     console.log("ready");
+}
+}
+Polymer(ReverseText);
+})();
+</script>
