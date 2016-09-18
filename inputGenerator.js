@@ -4,7 +4,6 @@
 
 class InputGenerator {
     makeArrayOfBinary(numberOfValues) {
-
         let arr = [];
         let newValue;
         let random;
@@ -19,12 +18,19 @@ class InputGenerator {
             }
             arr.push(newValue)
         }
+        return arr;
+    }
+    makeArrayOfNumbers(start, end) {
+        let arr = [];
+
+        for (let i = start; i <= end; i++) {
+            arr.push(i);
+        }
 
         return arr;
 
-
-
     }
+
 }
 
 const generator = new InputGenerator();
