@@ -26,10 +26,30 @@ class InputGenerator {
         for (let i = start; i <= end; i++) {
             arr.push(i);
         }
+        return arr;
+    }
+
+     makeArrayOfOneValueMoreThanHalfOfValues(start, end, value) {
+         let arr = [];
+
+         start = start / 2;
+         end = end / 2
+
+        for (let i = start; i <= end; i++) {
+            arr.push(value);
+            arr.push(i);
+
+            if (value > end / 2) {
+                console.log(i);
+            }
+
+        }
+
+
 
         return arr;
-
     }
+
 
 }
 
