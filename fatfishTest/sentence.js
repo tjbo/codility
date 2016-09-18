@@ -1,22 +1,28 @@
+const solution = module.exports = function solution (A) {
+  // create array from string, seprate by ? || . || !
+    const sentences = A.split(/[\!,\?,\.]/).map((_sentence, index) => {
 
+        const sentence = {}
+        sentence.words = []
 
-module.exports = function solution(A) {
-// first parse the string for sentences, split on ?,.,!
+        //split words on space
+        _sentence.split(' ').filter((word) => {
+            if (word.length >= 1) {
+                sentence.words.push(word)
+            }
+        })
+        return sentence
+    });
 
-var regex = new RegExp(['\!','\?','.'], "g");
+    //get longest sentence from array
+    const longestSentence = Math.max.apply(Math, sentences.map((sentence) => {
+        if (sentence.words) {
+            return sentence.words.length;
+        }
+    }));
+    console.log(sentences)
 
-A.split(regex)
-
-
-
-
-// then count the number of words in each sentence (push these onto an array or object to track the accumulation of each sentence) - a sentence without words is valid,  word must have more than 1 letter,
-
-
-//return
-
-
-    return A;
-
-
+    return longestSentence;
 }
+
+solution('Your code is syntactically correct and works properly on the example test. Your code is syntactically correct and works ?!? properly on the example. Your code is syntactically correct and works properly on the example test.. ')

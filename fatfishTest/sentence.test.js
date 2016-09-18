@@ -9,6 +9,7 @@ const generator = require('../inputGenerator.js')
 const testValue1 = 'We test coders. Give us a try?';
 const testValue2 = 'Forget  CVs..Save time . x x';
 const testValue3 = 'This is a test sentence...?!, This is a test sentence that is longer than the other one.'
+const testValue4 = 'Your code is syntactically correct and works properly on the example test. Your code is syntactically correct and works ?!? properly on the example. Your code is syntactically correct and works properly on the example test..';
 // const testValue4 = 'This is a test sentence number 2...?!, This is a test sentence number 2...?!,This is a test sentence number 2...?!'
 // const testValue5 = generator.makeArrayOfNumbers(-100, 100);
 // const testValue6 = generator.makeArrayOfNumbers(0, 99999);
@@ -24,9 +25,9 @@ describe('solution', function() {
     it('testValue3', function() {
     expect(solution(testValue3)).to.equal(12);
     });
-//     it('testValue4', function() {
-//     expect(solution(testValue4)).to.equal(3);
-//     });
+    it('testValue4', function() {
+    expect(solution(testValue4)).to.equal(12);
+    });
 //    it('testValue5', function() {
 //     expect(solution(testValue5)).to.equal(-1);
 //   });
