@@ -1,2 +1,2 @@
-var chai = require('chai');
-var expect = chai.expect; // we are using the "expect" style of Chai
+const chai = require('chai');
+const expect = chai.expect; // we are using the "expect" style of Chai
